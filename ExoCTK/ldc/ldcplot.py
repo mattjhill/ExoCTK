@@ -12,14 +12,8 @@ import inspect
 from bokeh.plotting import figure
 from matplotlib import rc, cm
 from astropy.io import fits
-try:
-    from .. import core
-except:
-    from ExoCTK import core
-try:
-    from . import ldcfit
-except:
-    from ExoCTK.ldc import ldcfit
+from .. import core
+from . import ldcfit
 
 rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
 rc('text', usetex=True)
