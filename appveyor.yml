@@ -14,7 +14,8 @@ environment:
       # For this package-template, we include examples of Cython modules,
       # so Cython is required for testing. If your package does not include
       # Cython code, you can set CONDA_DEPENDENCIES=''
-      CONDA_DEPENDENCIES: "Cython"
+      CONDA_DEPENDENCIES: "numpy scipy cython matplotlib numba pysynphot mock bokeh h5py"
+      PIP_DEPENDENCIES: "bibtexparser batman-package"
 
       # Conda packages for affiliated packages are hosted in channel
       # "astropy" while builds for astropy LTS with recent numpy versions
@@ -49,4 +50,4 @@ install:
 build: false
 
 test_script:
-    - "%CMD_IN_ENV% python setup.py test"
+    - "%CMD_IN_ENV% python setup.py install"
